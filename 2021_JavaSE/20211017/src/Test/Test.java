@@ -2,6 +2,13 @@ package Test;
 
 import java.util.Scanner;
 
+class Person {
+    public int age;
+    {
+        this.age = 10;
+    }
+}
+
 public class Test {
     public static void main(String[] args) {
         // 求一个整数，在内存当中存储时，二进制1的个数
