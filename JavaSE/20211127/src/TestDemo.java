@@ -3,10 +3,6 @@ import java.util.Scanner;
 public class TestDemo {
 
     public static void main(String[] args) {
-
-    }
-
-    public static void main1(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while(scanner.hasNext()) {
             String str = scanner.nextLine();
