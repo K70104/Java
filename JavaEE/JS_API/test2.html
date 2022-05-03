@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div style="font-size: 20px;">这是一个文本</div>
+
+<script>
+    let div = document.querySelector('div');
+    div.onclick = function() {
+        // 1、获取当前的字体大小
+        console.log(parseInt(div.style.fontSize));
+        let fontSize = parseInt(div.style.fontSize);
+
+        // 2、在当前字体大小的基础上，多增加 5px
+        fontSize += 5;
+        div.style.fontSize = fontSize + 'px';
+    }
+</script>
+
+
+
+<!-- <input type="checkbox" id="all"> 全选 <br>
+<input type="checkbox" class="girl"> 薛宝钗 <br>
+<input type="checkbox" class="girl"> 林黛玉 <br>
+<input type="checkbox" class="girl"> 王熙凤 <br>
+<input type="checkbox" class="girl"> 贾探春 <br>
+
+<script>
+    // 1、获取元素
+    let all = document.querySelector('#all');
+    let girls = document.querySelectorAll('.girl'); // 
+
+    // 2、给 all 注册点击事件
+    all.onclick = function() {
+        for (let i = 0; i < girls.length; i++) {
+            // all.checked 就是 all 这个复选框的选中状态
+            girls[i].checked = all.checked;
+        }
+    }
+
+    // 3、针对每个 girl 注册点击事件，实现对于 all 的取消操作
+    for (let i = 0; i < girls.length; i++) {
+        girls[i].onclick = function() {
+            all.checked = checkGirls(girls);
+        }
+    }
+
+    function checkGirls(girls) {
+        // 判断是不是所有的 girl 都被选中了
+        for (let i = 0; i < girls.length; i++) {
+            if (!girls[i].checked) {
+                // 只要有一个是未选中，all 就是未选中状态
+                return '';
+            }
+        }
+        // 遍历完，所有都是选中状态，就让 all 也是选中状态
+        return 'checked';
+    }
+</script> -->
+
+
+
+<!-- <input type="button" value="播放">
+
+<script>
+    let input = document.querySelector('input');
+    input.onclick = function() {
+        if (input.value == '播放') {
+            input.value = '暂停';
+        } else if (input.value == '暂停') {
+            input.value = '播放';
+        }
+    }
+</script> -->
+
+
+
+<!-- <img src="squirrel.jpg" alt="">
+
+<script>
+    let img = document.querySelector('img');
+    img.onclick = function() {
+        console.dir(img);
+        
+        if (img.src.indexOf('squirrel.jpg') >= 0) {
+            img.src = 'Hogwarts.jpg';
+        } else if (img.src.indexOf('Hogwarts.jpg') >= 0) {
+            img.src = 'squirrel.jpg';
+        }
+    }
+</script> -->
+
+</body>
+</html>

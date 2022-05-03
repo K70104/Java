@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- <div id="screen">
+    0
+</div> -->
+
+<!-- <input type="text" id="screen" value="0"> -->
+<button id="plus">+</button>
+
+<script>
+    let plusBtn = document.querySelector('#plus');
+    plusBtn.onclick = function() {
+        // 1、获取 screen 的值
+        let screen = document.querySelector('#screen');
+        let val = screen.innerHTML;
+        // let val = screen.value;
+        val = parseInt(val);
+
+        // 2、将这个值 + 1
+        val = val + 1;
+        
+        // 3、把新值写回去
+        screen.innerHTML = val;
+        // screen.value = val;
+    }
+</script>
+
+
+
+<!-- <div class="one">
+    one
+</div>
+
+<div class="two">
+    two
+</div>
+
+<ul>
+    <li>
+       three 
+    </li>
+</ul> -->
+
+<!-- <ul>
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+</ul> -->
+
+<!-- 事件源 -->
+<!-- <button>这是一个按钮</button> -->
+
+<!-- <button onclick="f()">这是一个按钮</button> -->
+
+<!-- <div id="screen">
+    <ul>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+    </ul>
+</div> -->
+
+<!-- <button id="btn">获取内容按钮</button> -->
+<!-- <button id="btn">修改内容按钮</button> -->
+
+<!-- <script>
+    // let btn = document.querySelector('#btn');
+    // btn.onclick = function() {
+    //     let screen = document.querySelector('#screen');
+    //     console.log(screen.innerHTML);
+    // }
+
+    let btn = document.querySelector('#btn');
+    btn.onclick = function() {
+        let screen = document.querySelector('#screen');
+        screen.innerHTML = '<h1>修改后的内容</h1>'
+    }
+
+    // let button = document.querySelector('button');
+    // 回调函数~ 这个函数不会立即调用,而是在合适的实际,被库/框架自动的调用.
+    // 事件类型：onclick点击事件       事件处理函数：function
+    // button.onclick = function() {
+    //     alert('hello');
+    // }
+    
+    // function f() {
+    //     alert('hello');
+    // }
+
+    // querySelector 参数就是一个 CSS 的选择器
+    // let div = document.querySelector('.one');
+    // console.log(div);
+
+    // // id 选择器
+    // let obj = document.querySelector('#two');
+    // console.log(obj);
+
+    // 复合选择器
+    // let obj2 = document.querySelectorAll('ul li');
+    // console.log(obj2); 
+</script> -->
+
+</body>
+</html>
