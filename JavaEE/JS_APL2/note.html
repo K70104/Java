@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            display: flex;
+        }
+        .todo,
+        .done {
+            width: 50%;
+            height: 100%;
+        }
+        .container h3 {
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: #333;
+            color: #fff;
+        }
+        .nav {
+            width: 800px;
+            height: 100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        .nav input {
+            width: 600px;
+            height: 50px;
+        }
+        .nav button {
+            width: 200px;
+            height: 50px;
+            border: none;
+            background-color: orange;
+            color: #fff;
+        }
+        .row {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+        .row input {
+            margin: 0 10px;
+        }
+        .row span {
+            width: 300px;
+        }
+        .row button {
+            width: 50px;
+            height: 40px;
+        }
+    </style>
+
+    <div class="nav">
+        <input type="text">
+        <button>新建任务</button>
+    </div>
+    <div class="container">
+        <div class="todo">
+            <h3>未完成</h3>
+            <div class="row">
+                <input type="checkbox">
+                <span>任务</span>
+                <button>删除</button>
+            </div>
+        </div>
+        <div class="done">
+            <h3>已完成</h3>
+        </div>
+    </div>
+
+    <script>
+        // 一、实现新增任务
+        let addTaskButton = document.querySelector('.nav button');
+        addTaskButton.onclick = function () {
+            // 1. 获取到任务内容的输入框
+            let input = document.querySelector('.nav input');
+            // 2. 获取到输入框内容
+            let taskContent = input.value;
+            // 3. 根据内容新建一个元素节点
+            let row = document.createElement('div');
+            row.className = 'row';
+            let checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            let span = document.createElement('span');
+            span.innerHTML = taskContent;
+            let button = document.createElement('button');
+            button.innerHTML = '删除';
+            row.appendChild(checkbox);
+            row.appendChild(span);
+            row.appendChild(button);
+            // 4. 把新节点插入到 todo 中
+            let todo = document.querySelector('.todo');
+            todo.appendChild(row);
+
+            // 二、点击复选框后将元素放到 "已完成"
+            //    在事件回调函数中使用 this 能够获取到当前处理事件的元素.
+            //    通过 this.parentNode 属性能够获取到当前元素的父元素.
+            //    点击 checkbox 时, 会先修改 value , 再触发点击事件
+            
+            // 修改 addTaskButton.onclick
+            // 5. 给 checkbox 注册点击事件
+            checkbox.onclick = function () {
+                //
+                var row = this.parentNode;
+                // 注意! 是先触发 checked 为 true, 然后再调用 onclick 函数
+                if (this.checked) {
+                    var target = document.querySelector('.done');
+                } else {
+                    var target = document.querySelector('.todo');
+                }
+                target.appendChild(row);
+            }
+
+            // 三、点击删除按钮删除该任务
+            // 6. 给删除按钮注册点击事件
+            button.onclick = function () {
+                let row = this.parentNode;
+                let grandParent = row.parentNode;
+                grandParent.removeChild(row);
+            }
+        }
+    </script>
+
+</body>
+</html>

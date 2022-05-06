@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="container"></div>
+
+    <button>删除 div</button>
+
+    <script>
+        let newDiv = document.createElement('div'); // 创建标签
+        newDiv.id = 'newDiv';
+        newDiv.className = 'one';
+        newDiv.innerHTML = 'hello';
+        console.log(newDiv);
+
+        let container = document.querySelector('.container');
+        container.appendChild(newDiv);
+
+        let button = document.querySelector('button');
+        button.onclick = function() {
+            container.removeChild(newDiv); // 前面已经获取了
+        }
+    </script>
+
+
+
+<!-- <style>
+    .light {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .dark {
+        background-color: #000;
+        color: #fff;
+    }
+</style>
+
+
+<div class="light" style="height: 300px;">这是一段话</div>
+<button>关灯</button>
+
+
+<script>
+    let div = document.querySelector('div');
+    let button = document.querySelector('button');
+    button.onclick = function() {
+        if (div.className == 'light') {
+            div.className = 'dark';
+            button.innnerHTML = '开灯';
+        } else if (div.className == 'dark') {
+            div.className = 'light';
+            button.innerHTML = '关灯';
+        }
+     }
+</script> -->
+
+</body>
+</html>
