@@ -1,0 +1,57 @@
+/* 博客编辑页专用样式 */
+
+.blog-edit-container {
+    width: 1000px;
+    height: calc(100% - 50px);
+    margin: 0 auto;
+}
+
+.blog-edit-container .title {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blog-edit-container .title input {
+    width: 895px;
+    height: 40px;
+    border-radius: 10px;
+    
+    border: none;
+    outline: none;
+    
+    font-size: 20px;
+    line-height: 40px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.blog-edit-container .title button {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    
+    color: white;
+    background-color: orange;
+    border: none;
+    outline: none;
+}
+
+.blog-edit-container .title button:active {
+    background-color: #666;
+}
+
+#editor {
+    border-radius: 10px;
+
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* 半透明的纸 盖在桌子上 如果纸上已经被涂写了很多内容 这个时候半透明相当于也就失效 */
+    /* background-color 只是针对当前元素进行设置 不会影响到子元素
+       opacity 会影响到子元素 给最外面的父元素设置了半透明 里面的元素也会一起半透明 */
+    opacity: 80%;
+}
+
+

@@ -1,0 +1,69 @@
+/*  博客登录页的样式 */
+
+.login-container {
+    width: 100%;
+    height: calc(100% - 50px); /* 减导航栏 */
+
+    /* 需要让子元素垂直水平居中 用 flex 布局 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-dialog {
+    width: 400px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.login-dialog h3 {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.login-dialog .row {
+    height: 50px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-dialog .row span {
+    /* sapn 转成块级元素 方便设置尺寸 */
+    display: block;
+    width: 100px;
+    font-weight: 700;
+}
+
+#username, #password {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    /* 输出文字时左侧不紧贴边框 */
+    padding-left: 10px;
+    border-radius: 10px;
+    /* 去边框 */
+    border: none;
+    /* 去输入时的轮廓线 */
+    outline: none;
+}
+
+.row button {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(0, 128, 0);
+    border: none;
+
+    margin-top: 20px;
+}
+
+/* 鼠标按下未弹起 */
+.row button:active {
+    background-color: #666;
+}
