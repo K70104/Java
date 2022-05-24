@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+</head>
+<body>
+
+<!-- action 的值就是构造请求的路径.
+    如果值是 /login 表示这是一个绝对路径~~ 直接把 /login 作为请求中的路径了
+    正确的做法, 应该是在这里使用相对路径. 没有 /，光是一个 login -->
+<form action="login" method="post">
+    <input type="text" name="username">
+    <input type="password"  name="password">
+    <input type="submit" value="登录">
+</form>
+
+</body>
+</html>
